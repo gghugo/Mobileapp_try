@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
@@ -11,37 +11,29 @@
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="css/style.css">
     <script>
+      function loadPage(page)
+      {
+        document.getElementById('menu').close();
+        document.getElementById('navigator').bringPageTop(page, { animation: 'fade' });
+      }
     </script>
 </head>
 <body>
-  <ons-page>
- <div style="text-align: center; margin-top: 200px">
- <p>
- <ons-input id="username" placeholder="Username" modifier="underbar">
- </ons-input>
- </p>
- <p>
- <ons-input
- id="password"
- placeholder="Password"
- type="password"
- modifier="underbar">
- </ons-input>
- </p>
- <p>
- <ons-button>Sign in</ons-button>
- </p>
- </div>
-</ons-page>
-<h2> Ernest Shackleton (1874 - 1922) </h2>
- <img src="image/shackletonicon.jpg" alt="Ernest
-Shackleton at Dulwich College"/>
-<p>Sir Ernest Shackleton was an Anglo-Irish Antarctic explorer and is famous, principally, for leading the Imperial Trans-Antartic (Endurance) Expedition of 1914-16.
-
-<p>He was one of the principal figures of the period known as the Heroic Age of Antartic Exploration. Educated at Dulwich College and having ignored his father's wishes that he become a doctor he joined the merchant navy. Of many quotes one of his most famous is,"Difficulties are just things to overcome, after all."
-
-<p>During his life he made three trips to the Antarctic. As well as climbing Mount Erebus he made many important scientific discoveries. On his fourth expedition to circumnavigate the Antartic he died of a heart attack. He was buried on the Island of South Georgia.
-
-	</br>
+  <ons-splitter> <!-- The side menu -->
+    <ons-splitter-side id="menu" collapse width="220px">
+      <ons-page>
+        <ons-list>
+          <ons-list-item onclick="loadPage('quiz.html')"> Quiz </ons-list-item>
+          <ons-list-item onclick="loadPage('expeditions.html')"> My Expeditions </ons-list-item>
+          <ons-list-item onclick="loadPage('gallery.html')"> Gallery </ons-list-item>
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side> <!-- Everything not in the side menu -->
+   
+    <ons-splitter-content>
+      <ons-navigator id="navigator" page="shackleton.html">
+      </ons-navigator>
+    </ons-splitter-content>
+  </ons-splitter>
 </body>
 </html>

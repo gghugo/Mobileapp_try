@@ -1,0 +1,13 @@
+<ons-page id= 'mylocations.html'>
+    <script>
+      function show_title()
+      {
+        LocalStorage.getItem(loc1)
+      }
+    </script>
+    <div id=”My Locations”>
+        <h2 align = 'center'>My Locations</h2>
+        <h3 id = 'my_loc'></h3>
+          <ons-button id = "Reveal Location" onClick = 'show_title()'> Refresh </ons-button>
+    </div>
+  </ons-page>
